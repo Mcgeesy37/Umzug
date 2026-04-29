@@ -1,0 +1,54 @@
+{
+  "firma": {
+    "name": "MoveElite GmbH",
+    "slogan": "Ihr Umzug. Unser Meisterwerk.",
+    "gruendungsjahr": 2008,
+    "mitarbeiter": 120,
+    "tel": "+49 30 987654",
+    "email": "info@moveelite.de"
+  },
+  "leistungen": [
+    {
+      "id": "privat",
+      "icon": "🏠",
+      "titel": "Privatumzug",
+      "beschreibung": "Ihr Zuhause in neuen Händen — sorgfältig, schnell und stressfrei. Von der ersten Kartonrolle bis zum letzten Bild.",
+      "features": ["Komplettservice möglich", "Möbelmontage inklusive", "Halteverbotszone organisiert", "Pünktlichkeitsgarantie"]
+    },
+    {
+      "id": "firma",
+      "icon": "🏢",
+      "titel": "Firmenumzug",
+      "beschreibung": "Minimale Ausfallzeit, maximale Präzision. Wir koordinieren Ihren Büro- oder Betriebsumzug ohne Betriebsunterbrechung.",
+      "features": ["Wochenend- & Nachtservice", "IT-Equipment-Transport", "Projektmanager zugewiesen", "Vertraulichkeitsgarantie"]
+    },
+    {
+      "id": "ausland",
+      "icon": "🌍",
+      "titel": "Auslandsumzug",
+      "beschreibung": "Von Berlin nach Barcelona oder London — wir bewegen Sie in 32 europäische Länder mit vollem Zollservice.",
+      "features": ["32 EU-Länder", "Zolldokumentation", "Versicherung EU-weit", "Eigenes Netzwerk vor Ort"]
+    },
+    {
+      "id": "klavier",
+      "icon": "🎹",
+      "titel": "Klavier- & Kunsttransport",
+      "beschreibung": "Für das Unersetzliche. Flügel, Antiquitäten und Kunstwerke werden mit Weißhandschuh-Sorgfalt und Spezialequipment transportiert.",
+      "features": ["Klimatisiertes Fahrzeug", "Spezialverpackung", "Separatversicherung", "Konservierungsschutz"]
+    },
+    {
+      "id": "einlagerung",
+      "icon": "📦",
+      "titel": "Einlagerung",
+      "beschreibung": "Ihr Inventar sicher aufbewahrt — in unseren klimatisierten, videoüberwachten Lagerhallen in Berlin und Hamburg.",
+      "features": ["Klimatisiert & trocken", "24h-Videoüberwachung", "Flexibel kündbar", "Inventarliste digital"]
+    },
+    {
+      "id": "entruempelung",
+      "icon": "♻️",
+      "titel": "Entrümpelung & Entsorgung",
+      "beschreibung": "Professionelle Entrümpelung von Wohnungen, Häusern und Büros — schnell, diskret und zertifiziert umweltgerecht.",
+      "features": ["Festpreisgarantie", "Wertanrechnung möglich", "Zertifizierte Entsorgung", "Sperrmüll & Elektroschrott"]
+    }
+  ]
+}
