@@ -1,0 +1,70 @@
+/* ══════════════════════════════════════════════════
+   MOVEELITE – animations.css
+══════════════════════════════════════════════════ */
+
+/* ── Page Transition ────────────────────────────── */
+.page-transition {
+  position: fixed; inset: 0;
+  background: var(--gold);
+  z-index: 99999; transform: scaleY(0);
+  transform-origin: bottom; pointer-events: none;
+}
+.page-transition.enter { animation: pt-in  0.5s cubic-bezier(0.76,0,0.24,1) forwards; }
+.page-transition.leave { animation: pt-out 0.5s cubic-bezier(0.76,0,0.24,1) forwards; }
+@keyframes pt-in  { from{ transform:scaleY(0); transform-origin:bottom; } to{ transform:scaleY(1); transform-origin:bottom; } }
+@keyframes pt-out { from{ transform:scaleY(1); transform-origin:top; }    to{ transform:scaleY(0); transform-origin:top; } }
+
+/* ── Float Animations ───────────────────────────── */
+[data-float="1"] { animation: float-a 7s ease-in-out infinite; }
+[data-float="2"] { animation: float-b 9s ease-in-out infinite 1.2s; }
+[data-float="3"] { animation: float-c 6s ease-in-out infinite 2.8s; }
+@keyframes float-a { 0%,100%{ transform: translateY(0) rotate(0deg); } 40%{ transform: translateY(-12px) rotate(1.5deg); } 70%{ transform: translateY(-5px) rotate(-0.5deg); } }
+@keyframes float-b { 0%,100%{ transform: translateY(0) rotate(0deg); } 50%{ transform: translateY(-14px) rotate(-1.5deg); } }
+@keyframes float-c { 0%,100%{ transform: translateY(0); } 45%{ transform: translateY(-9px); } }
+
+/* ── Shimmer ────────────────────────────────────── */
+.shimmer-card { position: relative; overflow: hidden; }
+.shimmer-card::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(201,168,76,0.04) 50%, transparent 60%);
+  background-size: 200% 100%;
+  animation: shimmer-gold 4s ease-in-out infinite;
+}
+@keyframes shimmer-gold { 0%{ background-position: 200% 0; } 100%{ background-position: -200% 0; } }
+
+/* ── Stagger Children ───────────────────────────── */
+.stagger > * {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.stagger.on > *:nth-child(1) { transition-delay: 0.00s; }
+.stagger.on > *:nth-child(2) { transition-delay: 0.10s; }
+.stagger.on > *:nth-child(3) { transition-delay: 0.20s; }
+.stagger.on > *:nth-child(4) { transition-delay: 0.30s; }
+.stagger.on > *:nth-child(5) { transition-delay: 0.40s; }
+.stagger.on > *:nth-child(6) { transition-delay: 0.50s; }
+.stagger.on > * { opacity: 1; transform: none; }
+
+/* ── Noise Overlay ──────────────────────────────── */
+body::after {
+  content: ''; position: fixed; inset: 0; z-index: 99990;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.022; pointer-events: none;
+}
+
+/* ── Gold Glow on Hover ─────────────────────────── */
+.gold-glow-hover { transition: box-shadow 0.3s; }
+.gold-glow-hover:hover { box-shadow: 0 0 30px rgba(201,168,76,0.2), 0 0 60px rgba(201,168,76,0.08); }
+
+/* ── Diagonal Divider ───────────────────────────── */
+.diag-divider {
+  width: 100%; height: 80px; overflow: hidden;
+  position: relative; z-index: 3;
+}
+.diag-divider::after {
+  content: ''; position: absolute;
+  width: 120%; height: 200%;
+  background: var(--navy-2);
+  top: -50%; left: -10%;
+  transform: rotate(-2deg);
+}
