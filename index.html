@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoveElite – Premium Umzugsservice Deutschland</title>
+  <meta name="description" content="MoveElite – Ihr Premium-Umzugsunternehmen. Sicher, pünktlich, weißhandschuhtauglich. Umzüge in ganz Deutschland und Europa." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,500;0,700;0,900;1,300;1,700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Custom Cursor (Desktop only) -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-icon">
+        <svg viewBox="0 0 80 80" fill="none">
+          <rect class="l-box" x="10" y="30" width="36" height="28" rx="3" stroke="#c9a84c" stroke-width="1.5"/>
+          <rect class="l-box2" x="34" y="22" width="36" height="28" rx="3" stroke="#c9a84c" stroke-width="1.5"/>
+          <path class="l-arrow" d="M50 50 L60 50 L56 46 M60 50 L56 54" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="loader-wordmark">
+        <span class="lw-move">MOVE</span><span class="lw-elite">ELITE</span>
+      </div>
+      <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
+      <p class="loader-sub">Premium Umzugsservice wird geladen…</p>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo" data-cursor="large">
+        <div class="logo-mark">
+          <svg viewBox="0 0 32 32" fill="none">
+            <rect x="2" y="12" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <rect x="12" y="6" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M22 23 L28 23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M25 20 L28 23 L25 26" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="logo-text-wrap">
+          <span class="logo-main">MoveElite</span>
+          <span class="logo-sub">Premium Umzüge</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#leistungen" data-cursor="link">Leistungen</a></li>
+        <li><a href="#ablauf" data-cursor="link">Ablauf</a></li>
+        <li><a href="#vorteile" data-cursor="link">Vorteile</a></li>
+        <li><a href="#referenzen" data-cursor="link">Referenzen</a></li>
+        <li><a href="#kontakt" class="nav-cta" data-cursor="large">Kostenlos anfragen</a></li>
+      </ul>
+      <button class="burger" id="burger" aria-label="Menü">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mm-inner">
+      <nav class="mm-nav">
+        <a href="#leistungen">Leistungen</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#vorteile">Vorteile</a>
+        <a href="#referenzen">Referenzen</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <div class="mm-contact">
+        <a href="tel:+4930987654">📞 +49 30 987654</a>
+        <a href="mailto:info@moveelite.de">✉️ info@moveelite.de</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ HERO ════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+    <div class="hero-noise"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hb-dot"></span>
+        <span>Deutschlands Premium-Umzugsservice · Seit 2008</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="ht-row">
+          <span class="ht-w">Ihr</span>
+          <span class="ht-w ht-serif-italic">Umzug.</span>
+        </span>
+        <span class="ht-row">
+          <span class="ht-w">Unser</span>
+          <span class="ht-w ht-gold">Meisterwerk.</span>
+        </span>
+      </h1>
+
+      <p class="hero-desc">
+        Wir behandeln Ihr Zuhause wie ein Kunstwerk. Vollständig versichert,
+        pünktlich auf die Minute und mit dem Sorgfalt eines Fünf-Sterne-Hauses.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#kontakt" class="btn-primary" data-cursor="large">
+          <span class="bp-text">Kostenlos anfragen</span>
+          <span class="bp-icon">→</span>
+          <div class="bp-fill"></div>
+        </a>
+        <a href="tel:+4930987654" class="btn-phone" data-cursor="large">
+          <span class="btn-phone-icon">📞</span>
+          <span>+49 30 987654</span>
+        </a>
+      </div>
+
+      <div class="hero-trust">
+        <div class="ht-item">
+          <span class="ht-val counter" data-target="2400">0</span><span class="ht-suf">+</span>
+          <p>Erfolgreiche Umzüge</p>
+        </div>
+        <div class="ht-sep"></div>
+        <div class="ht-item">
+          <span class="ht-val counter" data-target="16">0</span><span class="ht-suf"> J.</span>
+          <p>Erfahrung</p>
+        </div>
+        <div class="ht-sep"></div>
+        <div class="ht-item">
+          <span class="ht-val">4.9</span><span class="ht-suf">★</span>
+          <p>Ø Bewertung</p>
+        </div>
+        <div class="ht-sep"></div>
+        <div class="ht-item">
+          <span class="ht-val">100</span><span class="ht-suf">%</span>
+          <p>Vollversichert</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hv-main-card glass-card shimmer-card">
+        <div class="hvmc-header">
+          <div class="hvmc-status">
+            <span class="hvs-dot"></span>Live-Tracking aktiv
+          </div>
+          <span class="hvmc-date">Do, 30. Apr. 2025</span>
+        </div>
+        <div class="hvmc-route">
+          <div class="hvmc-city from">
+            <span class="hvc-label">VON</span>
+            <strong>Berlin Mitte</strong>
+            <span class="hvc-addr">Unter den Linden 12</span>
+          </div>
+          <div class="hvmc-arrow-wrap">
+            <div class="hvmc-truck">🚛</div>
+            <div class="hvmc-line">
+              <div class="hvmc-progress-dot"></div>
+            </div>
+          </div>
+          <div class="hvmc-city to">
+            <span class="hvc-label">NACH</span>
+            <strong>München Schwabing</strong>
+            <span class="hvc-addr">Leopoldstr. 88</span>
+          </div>
+        </div>
+        <div class="hvmc-items">
+          <div class="hvmc-item">
+            <span>📦</span><span>47 Kartons gepackt</span>
+            <span class="hvi-check">✓</span>
+          </div>
+          <div class="hvmc-item">
+            <span>🛋️</span><span>Möbel demontiert</span>
+            <span class="hvi-check">✓</span>
+          </div>
+          <div class="hvmc-item">
+            <span>🚛</span><span>Transport läuft</span>
+            <span class="hvi-active">●</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hv-float hf1 glass-card" data-float="1">
+        <span>🛡️</span>
+        <div><strong>Vollversichert</strong><p>bis 150.000 €</p></div>
+      </div>
+      <div class="hv-float hf2 glass-card" data-float="2">
+        <span>⚡</span>
+        <div><strong>Express</strong><p>ab 24h möglich</p></div>
+      </div>
+      <div class="hv-float hf3 glass-card" data-float="3">
+        <span>🏆</span>
+        <div><strong>Top-bewertet</strong><p>4.9 / 5.0</p></div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <div class="hsh-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ═══ TRUST BAR ══════════════════════════════ -->
+  <div class="trust-bar">
+    <div class="tb-track">
+      <div class="tb-items" id="tbItems">
+        <span>Privatumzüge</span><span class="tb-dot">◆</span>
+        <span>Firmenumzüge</span><span class="tb-dot">◆</span>
+        <span>Auslandsumzüge</span><span class="tb-dot">◆</span>
+        <span>Einlagerung</span><span class="tb-dot">◆</span>
+        <span>Klaviertransport</span><span class="tb-dot">◆</span>
+        <span>Kunsttransport</span><span class="tb-dot">◆</span>
+        <span>Seniorenumzug</span><span class="tb-dot">◆</span>
+        <span>Entrümpelung</span><span class="tb-dot">◆</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ LEISTUNGEN ═══════════════════════════════ -->
+  <section class="section s-leistungen" id="leistungen">
+    <div class="container">
+      <div class="s-head" data-reveal>
+        <span class="s-tag">Leistungen</span>
+        <h2>Alles aus einer Hand –<br /><em>perfekt koordiniert</em></h2>
+        <p>Von der ersten Kartonrolle bis zum letzten Bild an der Wand. Wir übernehmen alles.</p>
+      </div>
+      <div class="leistungen-grid" id="leistungenGrid"></div>
+    </div>
+  </section>
+
+  <!-- ═══ ABLAUF ════════════════════════════════════ -->
+  <section class="section s-ablauf" id="ablauf">
+    <div class="ablauf-bg"></div>
+    <div class="container">
+      <div class="s-head" data-reveal>
+        <span class="s-tag s-tag-light">Unser Ablauf</span>
+        <h2>Vom Anruf zum<br /><em>neuen Zuhause</em></h2>
+        <p>Ein klarer Prozess — damit Sie sich entspannen können.</p>
+      </div>
+      <div class="ablauf-steps">
+        <div class="ablauf-step" data-reveal data-delay="0">
+          <div class="as-num">01</div>
+          <div class="as-icon">📞</div>
+          <h3>Kostenlose Beratung</h3>
+          <p>Sie rufen an oder schreiben — wir melden uns innerhalb von 2 Stunden mit einer ersten Einschätzung.</p>
+          <span class="as-time">⏱ Binnen 2 Stunden</span>
+        </div>
+        <div class="ablauf-connector"><div class="ac-line"></div><span>→</span></div>
+        <div class="ablauf-step" data-reveal data-delay="100">
+          <div class="as-num">02</div>
+          <div class="as-icon">📋</div>
+          <h3>Vor-Ort-Besichtigung</h3>
+          <p>Unser Experte kommt zu Ihnen — kostenlos, unverbindlich, mit präziser Aufnahme aller Umzugsgüter.</p>
+          <span class="as-time">⏱ Innerhalb 48 Stunden</span>
+        </div>
+        <div class="ablauf-connector"><div class="ac-line"></div><span>→</span></div>
+        <div class="ablauf-step" data-reveal data-delay="200">
+          <div class="as-num">03</div>
+          <div class="as-icon">📝</div>
+          <h3>Festpreisangebot</h3>
+          <p>Transparenter Festpreis — keine Überraschungen, keine versteckten Kosten. Schriftlich garantiert.</p>
+          <span class="as-time">⏱ Selber Tag</span>
+        </div>
+        <div class="ablauf-connector"><div class="ac-line"></div><span>→</span></div>
+        <div class="ablauf-step" data-reveal data-delay="300">
+          <div class="as-num">04</div>
+          <div class="as-icon">🚛</div>
+          <h3>Professioneller Umzug</h3>
+          <p>Unser Team erscheint pünktlich, arbeitet effizient und behandelt jedes Stück mit Weißhandschuh-Sorgfalt.</p>
+          <span class="as-time">⏱ Zum Wunschtermin</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ VORTEILE / USP ════════════════════════════ -->
+  <section class="section s-vorteile" id="vorteile">
+    <div class="container">
+      <div class="vorteile-layout">
+        <div class="vl-left" data-reveal>
+          <span class="s-tag">Warum MoveElite</span>
+          <h2>Der Unterschied<br />den Sie <em>spüren</em></h2>
+          <p class="vl-lead">Andere Umzugsunternehmen transportieren Möbel. Wir transportieren Ihr Leben — mit der Sorgfalt, die es verdient.</p>
+          <div class="vl-features">
+            <div class="vf-item" data-reveal data-delay="0">
+              <div class="vfi-icon">🛡️</div>
+              <div>
+                <h4>Vollkaskoversicherung</h4>
+                <p>Jedes Umzugsgut ist bis 150.000 € vollversichert. Ihre Sicherheit, unsere Verantwortung.</p>
+              </div>
+            </div>
+            <div class="vf-item" data-reveal data-delay="100">
+              <div class="vfi-icon">⏰</div>
+              <div>
+                <h4>Pünktlichkeitsgarantie</h4>
+                <p>Wir erscheinen zum vereinbarten Termin — oder Sie erhalten 10% Rabatt. Versprochen.</p>
+              </div>
+            </div>
+            <div class="vf-item" data-reveal data-delay="200">
+              <div class="vfi-icon">👔</div>
+              <div>
+                <h4>Geschultes Fachpersonal</h4>
+                <p>Alle Mitarbeiter sind festangestellt, TÜV-geprüft und im Umgang mit Wertgegenständen geschult.</p>
+              </div>
+            </div>
+            <div class="vf-item" data-reveal data-delay="300">
+              <div class="vfi-icon">📱</div>
+              <div>
+                <h4>Live-Tracking</h4>
+                <p>Verfolgen Sie Ihren Umzug in Echtzeit — jederzeit, von überall, auf jedem Gerät.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="vl-right" data-reveal data-delay="150">
+          <div class="vr-card-stack">
+            <div class="vrc vrc-main">
+              <div class="vrc-num counter-big" data-target="98">0</div>
+              <span class="vrc-suf">%</span>
+              <p>unserer Kunden<br />empfehlen uns weiter</p>
+              <div class="vrc-stars">★★★★★</div>
+            </div>
+            <div class="vrc vrc-sm vrc-a">
+              <span class="vrc-icon">🏆</span>
+              <strong>Testsieger 2024</strong>
+              <p>Focus Money</p>
+            </div>
+            <div class="vrc vrc-sm vrc-b">
+              <span class="vrc-icon">🌍</span>
+              <strong>EU-weit</strong>
+              <p>32 Länder</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ STATS ══════════════════════════════════════ -->
+  <div class="stats-banner">
+    <div class="stats-inner">
+      <div class="sb-item" data-reveal data-delay="0">
+        <span class="sb-n counter" data-target="2400">0</span><span class="sb-u">+</span>
+        <p>Umzüge</p>
+      </div>
+      <div class="sb-div"></div>
+      <div class="sb-item" data-reveal data-delay="80">
+        <span class="sb-n counter" data-target="16">0</span><span class="sb-u"> J.</span>
+        <p>Erfahrung</p>
+      </div>
+      <div class="sb-div"></div>
+      <div class="sb-item" data-reveal data-delay="160">
+        <span class="sb-n counter" data-target="120">0</span><span class="sb-u">+</span>
+        <p>Mitarbeiter</p>
+      </div>
+      <div class="sb-div"></div>
+      <div class="sb-item" data-reveal data-delay="240">
+        <span class="sb-n">4.9</span><span class="sb-u">★</span>
+        <p>Bewertung</p>
+      </div>
+      <div class="sb-div"></div>
+      <div class="sb-item" data-reveal data-delay="320">
+        <span class="sb-n counter" data-target="32">0</span><span class="sb-u"> Länder</span>
+        <p>EU-Umzüge</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ REFERENZEN ════════════════════════════════ -->
+  <section class="section s-referenzen" id="referenzen">
+    <div class="container">
+      <div class="s-head" data-reveal>
+        <span class="s-tag">Referenzen</span>
+        <h2>Was unsere Kunden<br /><em>sagen</em></h2>
+        <p>Über 2.400 abgeschlossene Umzüge. Hier drei Stimmen.</p>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card" data-reveal data-delay="0">
+          <div class="tc-quote">"</div>
+          <div class="tc-stars">★★★★★</div>
+          <p class="tc-text">MoveElite hat unseren Firmenumzug mit 40 Mitarbeitern in einem einzigen Wochenende durchgeführt — ohne einen einzigen Ausfalltag. Präzision auf absolutem Höchstniveau.</p>
+          <div class="tc-author">
+            <div class="tca-av">RK</div>
+            <div>
+              <strong>Roland K.</strong>
+              <span>CEO · Muster Technology GmbH</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card testi-featured" data-reveal data-delay="150">
+          <div class="tc-quote">"</div>
+          <div class="tc-stars">★★★★★</div>
+          <p class="tc-text">Mein Flügel ist ein Erbstück aus dem 19. Jahrhundert. Ich hätte niemals gedacht, dass ein Umzug so stressfrei sein kann. Das Team von MoveElite hat ihn behandelt als wäre es ihr eigenes.</p>
+          <div class="tc-author">
+            <div class="tca-av">SB</div>
+            <div>
+              <strong>Sophia B.</strong>
+              <span>Konzertpianistin · Berlin</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card" data-reveal data-delay="300">
+          <div class="tc-quote">"</div>
+          <div class="tc-stars">★★★★★</div>
+          <p class="tc-text">Von Berlin nach Barcelona in drei Tagen. Alles ankam makellos, nichts fehlte, das Angebot wurde auf den Cent eingehalten. Ich werde nie wieder eine andere Firma beauftragen.</p>
+          <div class="tc-author">
+            <div class="tca-av">MT</div>
+            <div>
+              <strong>Markus T.</strong>
+              <span>Architekt · Privatumzug</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ KONTAKT ════════════════════════════════════ -->
+  <section class="section s-kontakt" id="kontakt">
+    <div class="kontakt-overlay"></div>
+    <div class="container">
+      <div class="kontakt-layout">
+        <div class="kl-left" data-reveal>
+          <span class="s-tag s-tag-light">Jetzt anfragen</span>
+          <h2>Ihr Umzug.<br /><em>Unser Versprechen.</em></h2>
+          <p>Kostenlos, unverbindlich, innerhalb von 2 Stunden Rückmeldung. Kein Callcenter — ein echter Umzugsexperte spricht mit Ihnen.</p>
+
+          <div class="kl-cards">
+            <div class="klc">
+              <span class="klc-icon">📞</span>
+              <div><strong>Telefon</strong><p>+49 30 987654</p></div>
+            </div>
+            <div class="klc">
+              <span class="klc-icon">✉️</span>
+              <div><strong>E-Mail</strong><p>info@moveelite.de</p></div>
+            </div>
+            <div class="klc">
+              <span class="klc-icon">📍</span>
+              <div><strong>Hauptsitz</strong><p>Musterstraße 12, 10115 Berlin</p></div>
+            </div>
+            <div class="klc">
+              <span class="klc-icon">⏰</span>
+              <div><strong>Erreichbar</strong><p>Mo – Sa · 07:00 – 20:00 Uhr</p></div>
+            </div>
+          </div>
+
+          <div class="kl-promise">
+            <div class="klp-icon">✦</div>
+            <div>
+              <strong>Das MoveElite-Versprechen</strong>
+              <ul>
+                <li>✓ Antwort innerhalb 2 Stunden</li>
+                <li>✓ Kostenloses Festpreisangebot</li>
+                <li>✓ Pünktlichkeitsgarantie</li>
+                <li>✓ Vollkaskoversicherung inklusive</li>
+                <li>✓ Keine versteckten Kosten</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="kl-right" data-reveal data-delay="200">
+          <form class="kontakt-form" id="kontaktForm" novalidate>
+            <div class="kf-head">
+              <h3>Kostenlose Anfrage</h3>
+              <p>Antwort garantiert innerhalb 2 Stunden.</p>
+            </div>
+
+            <div class="kf-row">
+              <div class="kf-group">
+                <label for="fname">Vorname *</label>
+                <input type="text" id="fname" placeholder="Max" required />
+              </div>
+              <div class="kf-group">
+                <label for="lname">Nachname *</label>
+                <input type="text" id="lname" placeholder="Mustermann" required />
+              </div>
+            </div>
+            <div class="kf-row">
+              <div class="kf-group">
+                <label for="email">E-Mail *</label>
+                <input type="email" id="email" placeholder="max@beispiel.de" required />
+              </div>
+              <div class="kf-group">
+                <label for="phone">Telefon</label>
+                <input type="tel" id="phone" placeholder="+49 30 …" />
+              </div>
+            </div>
+            <div class="kf-row">
+              <div class="kf-group">
+                <label for="von">Umzug von (PLZ / Stadt) *</label>
+                <input type="text" id="von" placeholder="10115 Berlin" required />
+              </div>
+              <div class="kf-group">
+                <label for="nach">Umzug nach (PLZ / Stadt) *</label>
+                <input type="text" id="nach" placeholder="80333 München" required />
+              </div>
+            </div>
+            <div class="kf-row">
+              <div class="kf-group">
+                <label for="datum">Gewünschter Termin</label>
+                <input type="date" id="datum" />
+              </div>
+              <div class="kf-group">
+                <label for="groesse">Wohnungsgröße</label>
+                <select id="groesse">
+                  <option value="">Bitte wählen …</option>
+                  <option>1-Zimmer (bis 40 m²)</option>
+                  <option>2-Zimmer (40–70 m²)</option>
+                  <option>3-Zimmer (70–100 m²)</option>
+                  <option>4-Zimmer (100–140 m²)</option>
+                  <option>5+ Zimmer / Haus</option>
+                  <option>Büro / Gewerbe</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="kf-group">
+              <label>Zusatzleistungen</label>
+              <div class="kf-checks">
+                <label class="kfc-item"><input type="checkbox" /><span>Einpackservice</span></label>
+                <label class="kfc-item"><input type="checkbox" /><span>Möbelmontage</span></label>
+                <label class="kfc-item"><input type="checkbox" /><span>Einlagerung</span></label>
+                <label class="kfc-item"><input type="checkbox" /><span>Entsorgung</span></label>
+                <label class="kfc-item"><input type="checkbox" /><span>Klaviertransport</span></label>
+                <label class="kfc-item"><input type="checkbox" /><span>Halteverbot</span></label>
+              </div>
+            </div>
+
+            <div class="kf-group">
+              <label for="msg">Weitere Informationen</label>
+              <textarea id="msg" rows="3" placeholder="z.B. Etage, Aufzug vorhanden, besondere Gegenstände …"></textarea>
+            </div>
+
+            <div class="kf-dsgvo">
+              <input type="checkbox" id="dsgvo" required />
+              <label for="dsgvo">Ich habe die <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a> gelesen und stimme zu. *</label>
+            </div>
+
+            <button type="submit" class="btn-submit" id="submitBtn">
+              <span class="bsub-text">Anfrage kostenlos senden</span>
+              <span class="bsub-icon">→</span>
+              <div class="bsub-loader"></div>
+            </button>
+
+            <div class="kf-success" id="kfSuccess">
+              <div class="kfs-check">✓</div>
+              <strong>Vielen Dank, {{ vorname }}!</strong>
+              <p>Wir melden uns innerhalb von 2 Stunden persönlich bei Ihnen.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-body">
+      <div class="fb-inner">
+        <div class="fb-brand">
+          <a href="index.html" class="logo" style="color:#fff">
+            <div class="logo-mark"><svg viewBox="0 0 32 32" fill="none"><rect x="2" y="12" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="12" y="6" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M22 23 L28 23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M25 20 L28 23 L25 26" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="logo-text-wrap"><span class="logo-main">MoveElite</span><span class="logo-sub">Premium Umzüge</span></div>
+          </a>
+          <p>Deutschlands Premium-Umzugsunternehmen. Sicher, pünktlich, zuverlässig — seit 2008.</p>
+          <div class="fb-social">
+            <a href="#" aria-label="Instagram">Ig</a>
+            <a href="#" aria-label="Facebook">Fb</a>
+            <a href="#" aria-label="LinkedIn">Li</a>
+          </div>
+        </div>
+        <div class="fb-cols">
+          <div class="fb-col">
+            <strong>Leistungen</strong>
+            <a href="#leistungen">Privatumzug</a>
+            <a href="#leistungen">Firmenumzug</a>
+            <a href="#leistungen">Auslandsumzug</a>
+            <a href="#leistungen">Klaviertransport</a>
+            <a href="#leistungen">Einlagerung</a>
+          </div>
+          <div class="fb-col">
+            <strong>Unternehmen</strong>
+            <a href="#ablauf">Unser Ablauf</a>
+            <a href="#vorteile">Unsere Vorteile</a>
+            <a href="#referenzen">Referenzen</a>
+            <a href="#kontakt">Kontakt</a>
+          </div>
+          <div class="fb-col">
+            <strong>Rechtliches</strong>
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+            <a href="#">AGB</a>
+          </div>
+          <div class="fb-col">
+            <strong>Kontakt</strong>
+            <a href="tel:+4930987654">+49 30 987654</a>
+            <a href="mailto:info@moveelite.de">info@moveelite.de</a>
+            <a href="#">Mo – Sa · 07–20 Uhr</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 MoveElite GmbH. Alle Rechte vorbehalten.</span>
+      <span class="fb-badge">🏆 Testsieger 2024 · Focus Money</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
